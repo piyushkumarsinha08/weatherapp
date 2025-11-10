@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  color:#444;
+  min-height:100vh;
+  min-width:100vw;
+  background:#f7f7f7;
+}
+
+
+#searchCityBar{
+padding:15px;
+background: #f4f4f4;
+}
+
+#searchBtn{
+padding:4px;
+}
+
+#weatherCard{
+  background:linear-gradient(100deg,#86C6EE,#0065A3);
+}
+
+
