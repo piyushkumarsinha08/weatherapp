@@ -8,9 +8,9 @@ import windImg from '../src/assets/wind.svg'
 import perciImg from '../src/assets/precipitation.svg'
 import { useState } from "react"
 
-function Card({}){
+function Card({weatherData}){
 
-//if(!weather) return null;
+//if(!weatherData) return;
 
 
 //const [] = useState()
@@ -19,18 +19,18 @@ let hrs = date.getHours();
 let min = date.getMinutes();
 
 let formatTime=()=>{
-    if(hrs>12 && hrs<11){
+    if(hrs>12 && hrs>11){
         return "PM"
     }else{
         return "AM"
     }
 }
 
-    //const cityName = weather.name || "Unknown";
-    //const description = weather.weather[0].main || "Unknown";
-    //const tempCelsius = (weather.main.temp - 273.15).toFixed(1) || "Unknown"; 
-    //const humidity = weather.main.humidity  || "Unknown";
-    //const windSpeed = weather.wind.speed; 
+    //const cityName = weatherData.name || "Unknown";
+    //const description = weatherData.weather[0].main || "Unknown";
+    //const tempCelsius = (weatherData[0].main.temp - 273.15).toFixed(1) || "Unknown"; 
+    //const humidity = weatherData.main.humidity  || "Unknown";
+    //const windSpeed = weatherData.wind.speed; 
     const tempCelsius=18;
     const description ="Clear";
     const humidity="70%";
@@ -41,7 +41,7 @@ return(
     <section id="weatherCard" className="h-[545px] w-[1026px] p-6 rounded-[30px] mt-10">
         <div className="currentTime overflow-hidden">
             <h2 className="mt-2 ml-5 font-[Lato] font-bold text-[1.5em] text-gray-950">Current Weather</h2>
-            <h3 className="ml-5 text-gray-950 font-[Lato] font-medium text-xl">{hrs+":"+min}{formatTime}</h3>
+            <h3 className="ml-5 text-gray-950 font-[Lato] font-medium text-xl">{hrs+":"+min}{formatTime()}</h3>
         </div>
 
         <div className="weatherInfo font-[Montserrat] mt-15 ml-10 text-gray-950 flex">
@@ -56,17 +56,17 @@ return(
         </div>
    
     <div className="extraInfo ml-5 mt-30 flex justify-evenly">
-        <div classname="humidityBox">
+        <div className="humidityBox">
             <img src={humidityImg}/>
             <span className="font-medium text-2xl text-[#111111]">{humidity}</span>
         </div>
 
-        <div classname="humidityBox">
+        <div className="humidityBox">
             <img src={windImg}/>
             <span className="font-medium text-2xl text-[#111111]">{windSpeed}</span>
         </div>
         
-        <div classname="humidityBox">
+        <div className="humidityBox">
             <img src={perciImg}/>
             <span className="font-medium text-2xl text-[#111111]">70%</span>
         </div>
