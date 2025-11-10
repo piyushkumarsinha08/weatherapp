@@ -1,16 +1,12 @@
 import sun from "../src/assets/sun.svg"
 import rain from '../src/assets/rain.svg'
 import cloudy from '../src/assets/cloudy.svg'
-
-
 import humidityImg from '../src/assets/humidity.svg'
 import windImg from '../src/assets/wind.svg'
 import perciImg from '../src/assets/precipitation.svg'
 import { useState } from "react"
 
-function Card({weatherData}){
-
-//if(!weatherData) return;
+function Card({weather}){
 
 
 //const [] = useState()
@@ -26,15 +22,15 @@ let formatTime=()=>{
     }
 }
 
-    //const cityName = weatherData.name || "Unknown";
-    //const description = weatherData.weather[0].main || "Unknown";
-    //const tempCelsius = (weatherData[0].main.temp - 273.15).toFixed(1) || "Unknown"; 
-    //const humidity = weatherData.main.humidity  || "Unknown";
-    //const windSpeed = weatherData.wind.speed; 
-    const tempCelsius=18;
-    const description ="Clear";
-    const humidity="70%";
-    const windSpeed ="10km/hr";
+    const cityName = weather?.name ?? "-";
+    const description = weather?.weather[0]?.main ?? "-";
+    const tempCelsius = (weather?.[0]?.main?.temp - 273.15).toFixed(1) ?? "-"; 
+    const humidity = weather?.main?.humidity  ?? "-";
+    const windSpeed = weather?.wind?.speed ?? '-'; 
+    //const tempCelsius=18;
+    //const description ="Clear";
+    //const humidity = weather?.main?.humidity ?? '-';
+    //const windSpeed ="10km/hr";
 
 
 return(
